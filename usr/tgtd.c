@@ -531,6 +531,7 @@ int main(int argc, char **argv)
 	sa_new.sa_flags = 0;
 	sigaction(SIGPIPE, &sa_new, &sa_old);
 	sigaction(SIGTERM, &sa_new, &sa_old);
+	sigaction(SIGKILL, &sa_new, &sa_old);
 
 	pagesize = sysconf(_SC_PAGESIZE);
 	for (pageshift = 0;; pageshift++)
